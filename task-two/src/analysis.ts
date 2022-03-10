@@ -1,10 +1,10 @@
 import fs from 'fs';
 import readLine from 'readline';
 type OutputType = {
-  "valid-domains": Set<string>,
-  totalEmailsParsed: number,
-  totalValidEmails: number,
-  categories: { [key: string]: number },
+  'valid-domains': Set<string>;
+  totalEmailsParsed: number;
+  totalValidEmails: number;
+  categories: { [key: string]: number };
 };
 /**
  * First task - Read the csv files in the inputPath and analyse them
