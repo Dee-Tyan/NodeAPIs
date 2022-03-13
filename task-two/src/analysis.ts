@@ -1,11 +1,13 @@
 import fs from 'fs';
 import readLine from 'readline';
+
 type OutputType = {
   'valid-domains': Set<string>;
   totalEmailsParsed: number;
   totalValidEmails: number;
   categories: { [key: string]: number };
 };
+
 /**
  * First task - Read the csv files in the inputPath and analyse them
  *
@@ -20,6 +22,7 @@ function analyseFiles(inputPaths: string[], outputPath: string) {
     totalValidEmails: 0,
     categories: {},
   };
+
   //index is the index of each element in path while the path is all the elements
   for (const [index, path] of inputPaths.entries()) {
     console.log(inputPaths);
@@ -29,15 +32,18 @@ function analyseFiles(inputPaths: string[], outputPath: string) {
     const reader = readLine.createInterface({
       input: fileStream, // file stream to read
     });
+
     // for each line
-    reader.on('line', (foo) => {
-      if (foo !== 'Emails') {
-        const email = foo;
+    reader.on('line', (lineData) => {
+      if (lineData !== 'Emails') {
+        const email = lineData;
         // check if the email is a valid email
-        const isValidEmail = regex.test(email); //why did we put regex in the email?
+        const isValidEmail = regex.test(email);
         // if email is valid do all this
         if (isValidEmail) {
           const domain = email.split('@')[1];
+          //const [_, domain] = email.split('@');
+
           output['valid-domains'].add(domain);
           output.totalValidEmails++;
           // check if this domain is already inside
