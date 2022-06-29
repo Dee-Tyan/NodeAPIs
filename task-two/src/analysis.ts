@@ -77,3 +77,32 @@ function analyseFiles(inputPaths: string[], outputPath: string) {
   }
 }
 export default analyseFiles;
+
+const a = ["a", "b", "c"];
+
+// let b = a.entries();
+// console.log(b);
+
+// // console.log(b.next())
+// // console.log(b.next())
+// // console.log(b.next())
+
+// for (const [index, value] of b) {
+//   console.log(index);
+//   console.log(value);
+// }
+
+// for (let index = 0; index < a.length; index++) {
+//   const value = a[index];
+
+//   console.log(index);
+//   console.log(value);
+// }
+
+
+// const arr = [1, 2, 3, 4, 5];
+
+// const [first, ...rest] = arr;
+
+// console.log(first);
+// console.log(rest);

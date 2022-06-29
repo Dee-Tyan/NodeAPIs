@@ -1,7 +1,9 @@
 import dns from 'dns';
 import fs from 'fs';
 import readLine from 'readline';
+
 const dnsSync = dns.promises;
+
 /**
  * Stretch goal - Validate all the emails in this files and output the report
  *
@@ -10,7 +12,7 @@ const dnsSync = dns.promises;
  */
 async function validateEmailAddresses(inputPath: string[], outputFile: string) {
   fs.appendFileSync(outputFile, 'Emails\n');
-  for await (const path of inputPath) {
+  for (const path of inputPath) {
     const readStream = fs.createReadStream(path);
     const reader = readLine.createInterface({
       input: readStream,

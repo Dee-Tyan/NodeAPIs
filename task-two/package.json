@@ -25,6 +25,7 @@
     "lodash": "4.17.20",
     "rxjs": "6.6.2",
     "semver": "7.3.2",
+    "tsc": "2.0.4",
     "v8-compile-cache": "2.1.1"
   },
   "devDependencies": {
@@ -52,5 +53,8 @@
     "hooks": {
       "pre-push": "echo \"---Running ESLint---\" && yarn lint"
     }
+  },
+  "engines": {
+    "node": ">=11.14.0"
   }
 }
